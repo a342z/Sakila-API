@@ -1,1 +1,2 @@
 # Sakila-API
+The Sakila API is a Java-based web service that provides both SOAP and RESTful interfaces for accessing and manipulating data within the Sakila database. The API allows users to query for actors and films within the database using standard HTTP methods and receive the data in either JSON format (RESTful) or SOAP format. This readme file provides information on how to install and use the Sakila API, including requirements, installation steps, and details on the available API endpoints.
