@@ -1,4 +1,4 @@
-package com.sakila.model.entity;
+package com.sakila.models.entities;
 
 import jakarta.persistence.*;
 

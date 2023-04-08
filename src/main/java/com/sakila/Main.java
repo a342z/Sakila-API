@@ -1,6 +1,12 @@
 package com.sakila;
 
-import com.sakila.model.entity.Actor;
+import com.sakila.mappers.ActorMapper;
+import com.sakila.models.dtos.ActorDto;
+import com.sakila.models.entities.Actor;
+import com.sakila.repositories.implementations.HibernateActorRepository;
+import com.sakila.repositories.interfaces.ActorRepository;
+import com.sakila.services.ActorService;
+import com.sakila.utils.EntityManagerUtil;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -8,9 +14,7 @@ import jakarta.persistence.Persistence;
 
 public class Main {
     public static void main(String[] args) {
-        EntityManagerFactory entityManagerFactory =  Persistence.createEntityManagerFactory("pu");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
-        Actor actor =  entityManager.find(Actor.class,1);  
-        System.out.println(actor.getFirstName());  
+        ActorService actorService = new ActorService(new HibernateActorRepository(EntityManagerUtil.getEntityManager()));
+        System.out.println(actorService.getActorById(1));
     }
 }

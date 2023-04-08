@@ -1,4 +1,4 @@
-package com.sakila.model.entity;
+package com.sakila.models.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,13 +8,13 @@ import jakarta.persistence.Table;
 import java.time.Instant;
 
 @Entity
-@Table(name = "category")
-public class Category {
+@Table(name = "language")
+public class Language {
     @Id
-    @Column(name = "category_id", columnDefinition = "TINYINT UNSIGNED not null")
+    @Column(name = "language_id", columnDefinition = "TINYINT UNSIGNED not null")
     private Short id;
 
-    @Column(name = "name", nullable = false, length = 25)
+    @Column(name = "name", nullable = false, length = 20)
     private String name;
 
     @Column(name = "last_update", nullable = false)

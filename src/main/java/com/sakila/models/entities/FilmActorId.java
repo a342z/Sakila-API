@@ -1,4 +1,4 @@
-package com.sakila.model.entity;
+package com.sakila.models.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
@@ -9,13 +9,21 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Embeddable
-public class FilmCategoryId implements Serializable {
-    private static final long serialVersionUID = 5973483211482346927L;
+public class FilmActorId implements Serializable {
+    private static final long serialVersionUID = 7570369769645612714L;
+    @Column(name = "actor_id", columnDefinition = "SMALLINT UNSIGNED not null")
+    private Integer actorId;
+
     @Column(name = "film_id", columnDefinition = "SMALLINT UNSIGNED not null")
     private Integer filmId;
 
-    @Column(name = "category_id", columnDefinition = "TINYINT UNSIGNED not null")
-    private Short categoryId;
+    public Integer getActorId() {
+        return actorId;
+    }
+
+    public void setActorId(Integer actorId) {
+        this.actorId = actorId;
+    }
 
     public Integer getFilmId() {
         return filmId;
@@ -25,26 +33,18 @@ public class FilmCategoryId implements Serializable {
         this.filmId = filmId;
     }
 
-    public Short getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(Short categoryId) {
-        this.categoryId = categoryId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        FilmCategoryId entity = (FilmCategoryId) o;
-        return Objects.equals(this.filmId, entity.filmId) &&
-                Objects.equals(this.categoryId, entity.categoryId);
+        FilmActorId entity = (FilmActorId) o;
+        return Objects.equals(this.actorId, entity.actorId) &&
+                Objects.equals(this.filmId, entity.filmId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(filmId, categoryId);
+        return Objects.hash(actorId, filmId);
     }
 
 }

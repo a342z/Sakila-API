@@ -1,4 +1,4 @@
-package com.sakila.model.entity;
+package com.sakila.models.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,32 +8,32 @@ import jakarta.persistence.Table;
 import java.time.Instant;
 
 @Entity
-@Table(name = "language")
-public class Language {
+@Table(name = "country")
+public class Country {
     @Id
-    @Column(name = "language_id", columnDefinition = "TINYINT UNSIGNED not null")
-    private Short id;
+    @Column(name = "country_id", columnDefinition = "SMALLINT UNSIGNED not null")
+    private Integer id;
 
-    @Column(name = "name", nullable = false, length = 20)
-    private String name;
+    @Column(name = "country", nullable = false, length = 50)
+    private String country;
 
     @Column(name = "last_update", nullable = false)
     private Instant lastUpdate;
 
-    public Short getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Short id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getCountry() {
+        return country;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public Instant getLastUpdate() {
