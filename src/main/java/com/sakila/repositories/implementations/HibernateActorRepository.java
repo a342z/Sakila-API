@@ -6,8 +6,10 @@ import com.sakila.models.entities.Actor;
 import com.sakila.repositories.interfaces.ActorRepository;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 public class HibernateActorRepository implements ActorRepository {
+
 
     private EntityManager em;
 
