@@ -21,6 +21,7 @@
     <mysql-connector.version>8.0.31</mysql-connector.version>
     <mapstruct.version>1.5.3.Final</mapstruct.version>
     <lombok.version>1.18.20</lombok.version>
+    <jersey.version>3.1.1</jersey.version>
   </properties>
 
   <dependencies>
@@ -61,7 +62,38 @@
       <version>${lombok.version}</version>
       <scope>provided</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.glassfish.jersey.containers</groupId>
+      <artifactId>jersey-container-servlet</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.glassfish.jersey.inject</groupId>
+      <artifactId>jersey-hk2</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.glassfish.jersey.media</groupId>
+      <artifactId>jersey-media-json-binding</artifactId>
+    </dependency>
+
   </dependencies>
+
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.glassfish.jersey</groupId>
+        <artifactId>jersey-bom</artifactId>
+        <version>${jersey.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+
 
   <build>
     <finalName>sakila-api</finalName>
@@ -114,6 +146,17 @@
           <configuration>
             <mainClass>com.sakila.Main</mainClass>
             <cleanupDaemonThreads>false</cleanupDaemonThreads>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat7-maven-plugin</artifactId>
+          <version>2.2</version>
+          <configuration>
+            <server>maven-tomcat-war</server>
+            <url>http://localhost:9090/manager/text</url>
+            <path>/sakila</path>
           </configuration>
         </plugin>
 
