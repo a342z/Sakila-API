@@ -18,11 +18,9 @@ public class Main {
         List<ActorDto> actors = actorService.getAll();
         System.out.println(actors.get(1));
 
-        ActorDto actor = new ActorDto();
-        actor.setFirstName("BOODY");
-        actor.setLastName("ZAKI");
-        System.out.println("ACTOR DTO > " + actor);
-        actorService.add(actor);
+        ActorDto actor = actorService.getById(203);
+        actor.setLastName("zaki");
+        actorService.update(203, actor);
         // ActorService actorService = new ActorServiceImp(new ActorRepositoryImp(EntityManagerUtil.getEntityManager()));
         // ActorService actorService = new ActorServiceImp(new ActorRepositoryImp(EntityManagerUtil.getEntityManager()));
         // System.out.println(actorService.getById(1));

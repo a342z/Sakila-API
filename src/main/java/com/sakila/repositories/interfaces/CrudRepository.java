@@ -9,7 +9,7 @@ public interface CrudRepository<T> {
 
     T add(T entity);
 
-    void update(T entity);
+    T update(T entity);
 
     void delete(int id);
 }
