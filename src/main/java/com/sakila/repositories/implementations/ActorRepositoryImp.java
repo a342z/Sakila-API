@@ -1,12 +1,9 @@
 package com.sakila.repositories.implementations;
 
-import java.util.List;
-
 import com.sakila.models.entities.Actor;
 import com.sakila.repositories.interfaces.ActorRepository;
 
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
 
 public class ActorRepositoryImp extends CrudRepositoryImp<Actor> implements ActorRepository{
 

@@ -1,13 +1,30 @@
 package com.sakila;
 
+import java.time.Instant;
+import java.util.List;
+
+import com.sakila.models.dtos.ActorDto;
 import com.sakila.repositories.implementations.ActorRepositoryImp;
+import com.sakila.repositories.interfaces.ActorRepository;
 import com.sakila.services.implementations.ActorServiceImp;
+import com.sakila.services.interfaces.ActorService;
 import com.sakila.utils.EntityManagerUtil;
 
 public class Main {
     public static void main(String[] args) {
-        // ActorService actorService = new ActorService(new ActorRepositoryImp(EntityManagerUtil.getEntityManager()));
-        ActorServiceImp actorService = new ActorServiceImp(new ActorRepositoryImp(EntityManagerUtil.getEntityManager()));
-        System.out.println(actorService.getById(1));
+
+        ActorRepository actorRepository = new ActorRepositoryImp(EntityManagerUtil.getEntityManager());
+        ActorService actorService = new ActorServiceImp(actorRepository);
+        List<ActorDto> actors = actorService.getAll();
+        System.out.println(actors.get(1));
+
+        ActorDto actor = new ActorDto();
+        actor.setFirstName("BOODY");
+        actor.setLastName("ZAKI");
+        System.out.println("ACTOR DTO > " + actor);
+        actorService.add(actor);
+        // ActorService actorService = new ActorServiceImp(new ActorRepositoryImp(EntityManagerUtil.getEntityManager()));
+        // ActorService actorService = new ActorServiceImp(new ActorRepositoryImp(EntityManagerUtil.getEntityManager()));
+        // System.out.println(actorService.getById(1));
     }
 }

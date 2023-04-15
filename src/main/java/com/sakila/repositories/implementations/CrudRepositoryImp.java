@@ -7,6 +7,7 @@ import com.sakila.repositories.interfaces.CrudRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 
+@Transactional
 public abstract class CrudRepositoryImp<T> implements CrudRepository<T> {
 
     private EntityManager em;
@@ -28,9 +29,13 @@ public abstract class CrudRepositoryImp<T> implements CrudRepository<T> {
     }
 
     @Override
-    @Transactional
-    public void add(T entity) {
+
+    public T add(T entity) {
+        em.getTransaction().begin();
         em.persist(entity);
+        em.getTransaction().commit();
+        System.out.println("REPO NEW ENTITY ID> " + entity.toString());
+        return entity;
     }
 
     @Override
@@ -39,7 +44,7 @@ public abstract class CrudRepositoryImp<T> implements CrudRepository<T> {
         em.merge(entity);
     }
 
-    @Override
+    @Override   
     @Transactional
     public void delete(int id) {
         em.remove(getById(id));

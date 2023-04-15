@@ -2,36 +2,26 @@ package com.sakila.models.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
+import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.Hibernate;
 
 import java.io.Serializable;
 import java.util.Objects;
 
+@Getter
+@Setter
 @Embeddable
 public class FilmCategoryId implements Serializable {
-    private static final long serialVersionUID = 5973483211482346927L;
-    @Column(name = "film_id", columnDefinition = "SMALLINT UNSIGNED not null")
-    private Integer filmId;
-
-    @Column(name = "category_id", columnDefinition = "TINYINT UNSIGNED not null")
+    private static final long serialVersionUID = 4843733148323172158L;
+    @NotNull
+    @Column(name = "category_id", nullable = false)
     private Short categoryId;
 
-    public Integer getFilmId() {
-        return filmId;
-    }
-
-    public void setFilmId(Integer filmId) {
-        this.filmId = filmId;
-    }
-
-    public Short getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(Short categoryId) {
-        this.categoryId = categoryId;
-    }
+    @NotNull
+    @Column(name = "film_id", nullable = false)
+    private Integer filmId;
 
     @Override
     public boolean equals(Object o) {

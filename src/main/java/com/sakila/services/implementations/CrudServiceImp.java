@@ -28,9 +28,11 @@ public abstract class CrudServiceImp<T, D> implements CrudService<D>{
         return mapper.toDto(repository.getById(id));
     }
 
-    public void add(D dto) {
+    public D add(D dto) {
         T entity = mapper.toEntity(dto);
-        repository.add(entity);
+        T savedEntity = repository.add(entity);
+        System.out.println("NEW T > " + savedEntity);
+        return mapper.toDto(savedEntity);
     }
 
 

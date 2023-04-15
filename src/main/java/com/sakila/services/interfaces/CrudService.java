@@ -7,7 +7,7 @@ public interface CrudService<T> {
 
     T getById(int id);
 
-    void add(T dto);
+    T add(T dto);
 
     void update(int id, T dto);
 
