@@ -8,7 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-public class ActorDto {
+@NoArgsConstructor
+public class ActorDto implements Serializable,Identifiable{
     private Integer id;
     private String firstName;
     private String lastName;

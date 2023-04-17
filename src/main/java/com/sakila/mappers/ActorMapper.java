@@ -9,7 +9,4 @@ import com.sakila.models.entities.Actor;
 @Mapper
 public interface ActorMapper extends ClassMapper<Actor,ActorDto> {
     ActorMapper INSTANCE = Mappers.getMapper(ActorMapper.class);
-
-    // ActorDto toDto(Actor entity);
-    // Actor toEntity(ActorDto dto);
 }
