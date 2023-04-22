@@ -1,0 +1,58 @@
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
+
+    <endpoint
+            name="actorService"
+            implementation="com.sakila.soap.services.implementations.ActorServiceImp"
+            url-pattern="/ws/actor"/>
+
+    <!-- <endpoint
+            name="filmService"
+            implementation="com.sakila.soap.services.implementations.FilmServiceImp"
+            url-pattern="/ws/film"/>
+
+    <endpoint
+            name="categoryService"
+            implementation="com.sakila.soap.services.implementations.CategoryServiceImp"
+            url-pattern="/ws/category"/>
+
+    <endpoint
+            name="customerService"
+            implementation="com.sakila.soap.services.implementations.CustomerServiceImp"
+            url-pattern="/ws/customer"/>
+
+    <endpoint
+            name="categoryService"
+            implementation="com.sakila.soap.services.implementations.CategoryServiceImp"
+            url-pattern="/ws/category"/>
+
+    <endpoint
+            name="inventoryService"
+            implementation="com.sakila.soap.services.implementations.InventoryServiceImp"
+            url-pattern="/ws/inventory"/>
+
+    <endpoint
+            name="languageService"
+            implementation="com.sakila.soap.services.implementations.LanguageServiceImp"
+            url-pattern="/ws/language"/>
+
+    <endpoint
+            name="paymentService"
+            implementation="com.sakila.soap.services.implementations.PaymentServiceImp"
+            url-pattern="/ws/payment"/>
+
+    <endpoint
+            name="rentalService"
+            implementation="com.sakila.soap.services.implementations.RentalServiceImp"
+            url-pattern="/ws/rental"/>
+
+    <endpoint
+            name="staffService"
+            implementation="com.sakila.soap.services.implementations.StaffServiceImp"
+            url-pattern="/ws/staff"/>
+
+    <endpoint
+            name="storeService"
+            implementation="com.sakila.soap.services.implementations.StoreServiceImp"
+            url-pattern="/ws/store"/> -->
+
+</endpoints>
