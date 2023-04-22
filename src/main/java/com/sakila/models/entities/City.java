@@ -14,6 +14,7 @@ import java.time.Instant;
 @Table(name = "city")
 public class City {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "city_id", columnDefinition = "SMALLINT UNSIGNED not null")
     private Integer id;
 
