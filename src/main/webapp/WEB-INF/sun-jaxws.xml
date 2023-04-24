@@ -5,7 +5,7 @@
             implementation="com.sakila.soap.services.implementations.ActorServiceImp"
             url-pattern="/ws/actor"/>
 
-    <!-- <endpoint
+    <endpoint
             name="filmService"
             implementation="com.sakila.soap.services.implementations.FilmServiceImp"
             url-pattern="/ws/film"/>
@@ -53,6 +53,6 @@
     <endpoint
             name="storeService"
             implementation="com.sakila.soap.services.implementations.StoreServiceImp"
-            url-pattern="/ws/store"/> -->
+            url-pattern="/ws/store"/>
 
 </endpoints>

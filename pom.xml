@@ -18,7 +18,7 @@
     <hibernate.version>6.2.1.Final</hibernate.version>
     <jakarta.persistence.version>3.1.0</jakarta.persistence.version>
     <mysql-connector.version>8.0.32</mysql-connector.version>
-    <mapstruct.version>1.5.3.Final</mapstruct.version>
+    <mapstruct.version>1.5.4.Final</mapstruct.version>
     <lombok.version>1.18.20</lombok.version>
     <jersey.version>3.1.1</jersey.version>
   </properties>
@@ -80,15 +80,9 @@
     </dependency>
 
     <dependency>
-      <groupId>jakarta.validation</groupId>
-      <artifactId>jakarta.validation-api</artifactId>
-      <version>3.0.2</version>
-    </dependency>
-
-    <dependency>
-      <groupId>javax.enterprise</groupId>
-      <artifactId>cdi-api</artifactId>
-      <version>2.0</version>
+      <groupId>jakarta.enterprise</groupId>
+      <artifactId>jakarta.enterprise.cdi-api</artifactId>
+      <version>4.0.1</version>
       <scope>provided</scope>
     </dependency>
 
@@ -110,18 +104,11 @@
       <version>4.0.0</version>
     </dependency>
 
-<dependency>
-    <groupId>com.sun.xml.bind</groupId>
-    <artifactId>jaxb-core</artifactId>
-    <version>4.0.2</version>
-</dependency>
-
-
-<dependency>
-    <groupId>com.sun.xml.bind</groupId>
-    <artifactId>jaxb-impl</artifactId>
-    <version>4.0.2</version>
-</dependency>
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-impl</artifactId>
+      <version>4.0.2</version>
+    </dependency>
 
   </dependencies>
 
@@ -167,7 +154,7 @@
               <path>
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct-processor</artifactId>
-                <version>1.4.2.Final</version>
+               <version>1.5.4.Final</version>
               </path>
             </annotationProcessorPaths>
             <release>17</release>

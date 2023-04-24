@@ -1,7 +1,8 @@
 package com.sakila.models.dtos;
 
 import jakarta.validation.constraints.NotNull;
-import lombok.Data;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import lombok.*;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -10,6 +11,9 @@ import java.time.Instant;
  * A DTO for the {@link com.sakila.models.entities.Store} entity
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@XmlRootElement(name="store")
 public class StoreDto implements Serializable,Identifiable {
     private Short id;
     @NotNull

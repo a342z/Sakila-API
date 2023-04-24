@@ -1,7 +1,8 @@
 package com.sakila.models.dtos;
 
 import jakarta.validation.constraints.NotNull;
-import lombok.Data;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import lombok.*;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -9,7 +10,10 @@ import java.time.Instant;
 /**
  * A DTO for the {@link com.sakila.models.entities.Rental} entity
  */
+@XmlRootElement(name="rental")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class RentalDto implements Serializable,Identifiable {
     private Integer id;
     @NotNull
