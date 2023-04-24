@@ -37,10 +37,10 @@ mvn tomcat7:deploy
 ## Usage
 Once you have installed the Sakila API, you can access the following endpoints:
 
-- /soap/ - SOAP endpoint
+- /ws/ - SOAP endpoint
 - /api/ - REST endpoint
 
-To access the SOAP endpoint, you can use any SOAP client, such as SoapUI. The WSDL file for the Sakila API can be found at /soap/SakilaAPI?wsdl.
+To access the SOAP endpoint, you can use any SOAP client, such as SoapUI. The WSDL file for the Sakila API can be found at /ws/resourceName?wsdl.
 
 To access the REST endpoint, you can use any HTTP client, such as Postman. The API supports the following HTTP methods:
 - GET - retrieve a resource
